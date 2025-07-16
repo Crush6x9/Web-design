@@ -81,3 +81,44 @@ publish/
 *.rptproj.bak
 *.tmp_proj
 *.tmp
+
+# 忽略前端依赖和构建产物
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.env.local
+/frontend/.vitepress/cache
+
+# 忽略后端构建输出
+/backend/target/
+/backend/.idea/
+/backend/.classpath
+/backend/.project
+/backend/.settings/
+
+# 忽略数据库配置和工具
+/Navicat/
+/redis/
+
+# 通用忽略项
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+
+# 忽略 Java Maven 编译目录
+**/target/
+
+# 忽略 IDE 配置
+**/.idea/
+**/.classpath
+**/.project
+**/.settings/
+
+# 忽略日志和测试结果
+*.log
+*.xml
+
+# 忽略 Windows / macOS 系统文件
+Thumbs.db
+.DS_Store

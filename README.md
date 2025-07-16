@@ -1,28 +1,23 @@
-## 开发
+## 目录
 
 ```bash
+# 前端
+所有文件均在/frontend下
 
-# 进入项目目录
-cd neu-ui
+# 后端
+所有文件均在/backend下
 
-# 安装依赖
-npm install
+# 环境
+redis与Navicat在所属独立文件夹下
 
-# 建议不要直接使用 cnpm 安装依赖，会有各种诡异的 bug。可以通过如下操作解决 npm 下载速度慢的问题
-npm install --registry=https://registry.npm.taobao.org
+# Github仓库
+.gitignore控制的是 整个 Git 仓库的忽略规则，不部署子模块的话必须放在根目录下
 
-# 启动服务
-npm run dev
+# README.md
+即本文件 作为项目说明会在Github的repositories页显示
 ```
-
-浏览器访问 http://localhost:80
-
-## 发布
+## 
 
 ```bash
-# 构建测试环境
-npm run build:stage
-
-# 构建生产环境
-npm run build:prod
+# 后续注解接着往下写
 ```
