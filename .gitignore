@@ -1,21 +1,26 @@
-# === Node.js / 前端项目常用忽略项 ===
-node_modules/
-dist/
+# === 通用系统忽略项 ===
 .DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+
+# === 前端项目常用忽略项（Node.js / Vite / Vue） ===
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.env.local
+/frontend/.vitepress/cache
+/frontend/.output/
+package-lock.json
+yarn.lock
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-**/*.log
-
-package-lock.json
-yarn.lock
-
-# 测试报告和覆盖率
 tests/**/coverage/
 tests/e2e/reports
 selenium-debug.log
 
-# 编辑器配置
+# 编辑器与工具配置
 .vscode/
 .idea/
 *.suo
@@ -26,21 +31,31 @@ selenium-debug.log
 *.code-workspace
 .history/
 
-# === Visual Studio 项目常用忽略项 ===
+# === 后端项目（Spring Boot + Maven）忽略项 ===
+/backend/**/target/
+/backend/.idea/
+/backend/.classpath
+/backend/.project
+/backend/.settings/
+/backend/logs/
+*.iml
+
+# Maven 本地仓库缓存（如果不共享）
+.mvn/
+**/mvnw
+**/mvnw.cmd
+
+# === Visual Studio 项目常用忽略项（如需 C#/WPF） ===
 .vs/
 *.user
 *.userosscache
-*.suo
 *.sln.docstates
 *.vcxproj.user
 *.vcxproj.filters
 *.pdb
 *.obj
 *.exe
-*.log
-*.tmp
 *.ilk
-*.cache
 *.aps
 *.ncb
 *.sdf
@@ -49,20 +64,16 @@ selenium-debug.log
 *.VC.opendb
 *.tlog
 *.scc
-
-# bin/obj 输出目录
 bin/
 obj/
 Debug/
 Release/
 
-# Azure / Publish 相关
+# === 发布 / 部署相关 ===
 *.publish.xml
 *.azurePubxml
 PublishScripts/
 publish/
-
-# NuGet
 *.nupkg
 *.snupkg
 **/packages/*
@@ -70,55 +81,14 @@ publish/
 *.nuget.props
 *.nuget.targets
 
-# Others
+# === 数据库 & 密钥 ===
 *.dbmdl
 *.dbproj.schemaview
 *.jfm
 *.pfx
 *.publishsettings
-*.vspscc
-*.vssscc
 *.rptproj.bak
-*.tmp_proj
-*.tmp
 
-# 忽略前端依赖和构建产物
-/frontend/node_modules/
-/frontend/dist/
-/frontend/.env.local
-/frontend/.vitepress/cache
-
-# 忽略后端构建输出
-/backend/target/
-/backend/.idea/
-/backend/.classpath
-/backend/.project
-/backend/.settings/
-
-# 忽略数据库配置和工具
+# === 你项目特有的忽略项 ===
 /Navicat/
 /redis/
-
-# 通用忽略项
-*.log
-*.tmp
-*.bak
-.DS_Store
-Thumbs.db
-
-# 忽略 Java Maven 编译目录
-**/target/
-
-# 忽略 IDE 配置
-**/.idea/
-**/.classpath
-**/.project
-**/.settings/
-
-# 忽略日志和测试结果
-*.log
-*.xml
-
-# 忽略 Windows / macOS 系统文件
-Thumbs.db
-.DS_Store
