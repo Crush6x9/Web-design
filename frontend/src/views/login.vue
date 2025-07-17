@@ -1,7 +1,8 @@
 <template>
   <div class="login">
+    <h1 class="tip">-------------title占位符-------------</h1>
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
-      <h3 class="title">测试管理系统</h3>
+      <h3 class="title">用户登入</h3>
       <el-form-item prop="username">
         <el-input v-model="loginForm.username" type="text" auto-complete="off" placeholder="账号">
           <svg-icon slot="prefix" icon-class="user" class="el-input__icon input-icon" />
@@ -37,8 +38,8 @@
         <el-button
           :loading="loading"
           size="medium"
-          type=""
-          style="width:100%;background-color: #FFF0F5;"
+          type="primary"
+          style="width:100%;"
           @click.native.prevent="handleLogin"
         >
           <span v-if="!loading">登 录</span>
@@ -140,13 +141,24 @@ export default {
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
+.tip{
+  float: none;
+  font-size: 40px;
+  color: #333;
+  text-align: center;
+  font-weight: 500;
+  -webkit-text-stroke: 1px #333; 
+}
+
 .login {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 100%;
   background-image: url("../assets/images/1.jpg");
   background-size: cover;
+  flex-direction: column;
+  padding-top: 30px;
 }
 .title {
   margin: 0px auto 30px auto;
@@ -155,6 +167,7 @@ export default {
 }
 
 .login-form {
+  margin-top: 3%;
   margin-left: 0;
   border-radius: 6px;
   background: #fdf6fb;

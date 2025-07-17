@@ -1,33 +1,29 @@
 <template>
   <div class="navbar">
-    <hamburger id="hamburger-container" :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
-
-    <breadcrumb id="breadcrumb-container" class="breadcrumb-container" />
-
+    <div class="left-menu">
+      <img src="/app.png" style="height: 35px; width: 35px;margin-bottom: 5px; margin-left: 20px;">
+      <h1 class="tip">Internet Gravepool</h1>
+    </div>
     <div class="right-menu">
-      <template v-if="device!=='mobile'">
-        <search id="header-search" class="right-menu-item" />
-
-        <screenfull id="screenfull" class="right-menu-item hover-effect" />
-
-        <el-tooltip content="布局大小" effect="dark" placement="bottom">
-          <size-select id="size-select" class="right-menu-item hover-effect" />
-        </el-tooltip>
-
-      </template>
-
+      <div class="search-container">
+        <el-input
+          v-model="searchQuery"
+          placeholder="搜索..."
+          style="width: 200px; vertical-align: middle;"
+          clearable
+          @keyup.enter="handleSearch"
+        >
+          <i slot="prefix" class="el-input__icon el-icon-search"></i>
+        </el-input>
+      </div>
       <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
         <div class="avatar-wrapper">
           <img src="/user.png" class="user-avatar">
-          <i class="el-icon-caret-bottom" />
         </div>
         <el-dropdown-menu slot="dropdown">
           <router-link to="/user/profile">
             <el-dropdown-item>个人中心</el-dropdown-item>
           </router-link>
-          <el-dropdown-item @click.native="setting = true">
-            <span>布局设置</span>
-          </el-dropdown-item>
           <el-dropdown-item divided @click.native="logout">
             <span>退出登录</span>
           </el-dropdown-item>
@@ -39,19 +35,16 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import Breadcrumb from '@/components/Breadcrumb'
-import Hamburger from '@/components/Hamburger'
-import Screenfull from '@/components/Screenfull'
-import SizeSelect from '@/components/SizeSelect'
 import Search from '@/components/HeaderSearch'
 
 export default {
   components: {
-    Breadcrumb,
-    Hamburger,
-    Screenfull,
-    SizeSelect,
     Search,
+  },
+  data() {
+    return {
+      searchQuery: '' // 搜索输入的值
+    }
   },
   computed: {
     ...mapGetters([
@@ -85,6 +78,14 @@ export default {
           location.href = '/index';
         })
       })
+    },
+    handleSearch() {
+      // 这里可以添加搜索逻辑，例如跳转到搜索页面或触发搜索事件
+      console.log('搜索内容:', this.searchQuery)
+      // 示例：跳转到搜索结果页面
+      if (this.searchQuery) {
+        this.$router.push({ path: `/search?q=${this.searchQuery}` })
+      }
     }
   }
 }
@@ -98,40 +99,42 @@ export default {
   background: #fff;
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
 
-  .hamburger-container {
-    line-height: 46px;
-    height: 100%;
-    float: left;
-    cursor: pointer;
-    transition: background .3s;
-    -webkit-tap-highlight-color:transparent;
-
-    &:hover {
-      background: rgba(0, 0, 0, .025)
-    }
+  .tip{
+    font-size: 25px;
+    margin-left: 15px;
+    font-weight: 700;
+    margin-top: 10px;
   }
 
-  .breadcrumb-container {
+  .left-menu {
     float: left;
-  }
-
-  .errLog-container {
-    display: inline-block;
-    vertical-align: top;
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
   }
 
   .right-menu {
     float: right;
     height: 100%;
     line-height: 50px;
+    display: flex;
+    align-items: center;
 
     &:focus {
       outline: none;
     }
 
+    .search-container {
+      margin-right: 10px;
+      
+      ::v-deep .el-input__inner { /* 使用 ::v-deep 兼容 Vue 2 */
+        border-radius: 20px;
+        padding-left: 30px;
+      }
+    }
+
     .right-menu-item {
       display: inline-block;
-      padding: 0 8px;
       height: 100%;
       font-size: 18px;
       color: #5a5e66;
@@ -148,7 +151,7 @@ export default {
     }
 
     .avatar-container {
-      margin-right: 30px;
+      margin-right: 15px;
 
       .avatar-wrapper {
         margin-top: 5px;
@@ -164,7 +167,7 @@ export default {
         .el-icon-caret-bottom {
           cursor: pointer;
           position: absolute;
-          right: -20px;
+          right: -10px;
           top: 25px;
           font-size: 12px;
         }

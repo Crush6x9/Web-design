@@ -16,7 +16,7 @@ import './assets/icons' // icon
 import './permission' // permission control
 import { getDicts } from "@/api/system/dict/data";
 import { getConfigKey } from "@/api/system/config";
-import { parseTime, resetForm, addDateRange, selectDictLabel, selectDictLabels, download, handleTree,getSysUserList } from "@/utils/neu";
+import { parseTime, resetForm, addDateRange, selectDictLabel, selectDictLabels, download, handleTree, getSysUserList } from "@/utils/neu";
 import Pagination from "@/components/Pagination";
 // 自定义表格工具扩展
 import RightToolbar from "@/components/RightToolbar"
@@ -52,7 +52,6 @@ Vue.prototype.msgInfo = function (msg) {
 }
 Vue.prototype.getBaseUrl = getBaseUrl
 
- 
 // 提交以后禁用按钮一段时间，防止重复提交
 Vue.directive('noMoreClick', {
   inserted(el, binding) {
