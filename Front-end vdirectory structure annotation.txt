@@ -1,0 +1,219 @@
+#以下为目录结构及注解
+D:\Web-design\frontend
+├── .editorconfig
+│   # 代码格式规范，定义缩进、换行等规则，确保团队代码风格一致。
+├── .env.development
+│   # 开发环境变量，配置 API 地址（如 http://localhost:8080/api）。
+├── .env.production
+│   # 生产环境变量，配置生产 API 地址和 CDN 路径。
+├── .env.staging
+│   # 测试环境变量，配置测试环境 API 地址。
+├── .eslintignore
+│   # ESLint 忽略文件，指定不检查的目录（如 node_modules）。
+├── .eslintrc.js
+│   # ESLint 配置，定义代码风格规则（如缩进、变量命名）。
+├── babel.config.js
+│   # Babel 配置，转译现代 JavaScript，确保浏览器兼容性。
+├── package.json
+│   # 项目依赖（如 Vue, Element UI, Axios）和脚本（serve, build）。
+├── vue.config.js
+│   # Vue CLI 配置，定义构建、代理、CDN 等设置。
+├── public
+│   # 静态资源目录，存放无需编译的文件。
+│   ├── favicon-small.png
+│   │   # 网站小图标，显示在浏览器标签页。
+│   ├── favicon.ico
+│   │   # 网站图标，兼容旧浏览器。
+│   ├── index.html
+│   │   # 项目入口 HTML，加载 Vue 应用。
+│   ├── robots.txt
+│   │   # 搜索引擎爬虫规则，控制页面索引。
+│   └── user.png
+│       # 默认用户头像，供用户管理模块使用。
+├── src
+│   # 源代码目录，包含所有 Vue 组件、API 和工具。
+│   ├── App.vue
+│   │   # Vue 根组件，定义全局布局结构。
+│   ├── main.js
+│   │   # 应用入口，初始化 Vue、路由、Vuex、Element UI。
+│   ├── permission.js
+│   │   # 权限控制逻辑，定义路由守卫和角色验证。
+│   ├── settings.js
+│   │   # 项目配置（如主题颜色、侧边栏设置）。
+│   ├── api
+│   │   # API 请求模块，与后端交互。
+│   │   ├── login.js
+│   │   │   # 登录相关 API（如 /api/login）。
+│   │   ├── entities.js
+│   │   │   # 产品管理 API（如 /api/entities 获取产品列表）。
+│   │   ├── media.js
+│   │   │   # 媒体管理 API（如 /api/media 上传图片/视频）。
+│   │   ├── search.js
+│   │   │   # 搜索 API，基于 tags 和 entities 表。
+│   │   └── system
+│   │       ├── user.js
+│   │       │   # 用户管理 API（如 /api/system/users）。
+│   │       ├── role.js
+│   │       │   # 角色管理 API（如 /api/system/roles）。
+│   │       ├── dept.js
+│   │       │   # 部门管理 API（如 /api/system/depts）。
+│   │       ├── menu.js
+│   │       │   # 菜单管理 API（如 /api/system/menus）。
+│   │       └── config.js
+│   │           # 系统配置 API（如主题、布局设置）。
+│   ├── assets
+│   │   # 静态资源目录，存放图片、样式、图标。
+│   │   ├── images
+│   │   │   ├── login-background.jpg
+│   │   │   │   # 登录页面背景图，需压缩以优化加载。
+│   │   │   └── profile.jpg
+│   │   │       # 用户个人资料默认图片。
+│   │   ├── logo
+│   │   │   ├── favicon-small.png
+│   │   │   │   # 网站小图标（与 public 中重复，可移除）。
+│   │   │   └── logo.png
+│   │   │       # 网站 logo，显示在导航栏或登录页。
+│   │   ├── styles
+│   │   │   ├── element-ui.scss
+│   │   │   │   # Element UI 全局样式。
+│   │   │   ├── element-variables.scss
+│   │   │   │   # Element UI 主题变量，定制颜色、字体。
+│   │   │   ├── index.scss
+│   │   │   │   # 全局样式，定义通用 CSS。
+│   │   │   └── variables.scss
+│   │   │       # CSS 变量，统一主题颜色（如 --primary-color）。
+│   │   └── icons
+│   │       ├── index.js
+│   │       │   # SVG 图标注册脚本。
+│   │       └── svg
+│   │           ├── dashboard.svg
+│   │           │   # 仪表盘图标。
+│   │           ├── user.svg
+│   │           │   # 用户管理图标。
+│   │           └── search.svg
+│   │               # 搜索页面图标。
+│   ├── components
+│   │   # 可复用组件，供多个页面使用。
+│   │   ├── Breadcrumb
+│   │   │   └── index.vue
+│   │   │       # 面包屑导航，显示页面层级。
+│   │   ├── FileUpload
+│   │   │   └── index.vue
+│   │   │       # 文件上传组件，支持上传媒体文件。
+│   │   ├── ImageUpload
+│   │   │   └── index.vue
+│   │   │       # 图片/视频上传组件，与 media 表对接。
+│   │   ├── Pagination
+│   │   │   └── index.vue
+│   │   │       # 分页组件，用于产品和媒体列表。
+│   │   ├── SvgIcon
+│   │   │   └── index.vue
+│   │   │       # SVG 图标组件，渲染 assets/icons/svg 文件。
+│   │   └── ThemePicker
+│   │       └── index.vue
+│   │           # 主题切换组件，支持动态切换颜色。
+│   ├── directive
+│   │   # 自定义 Vue 指令，用于权限控制。
+│   │   └── permission
+│   │       ├── hasPermi.js
+│   │       │   # 检查权限指令（如 v-hasPermi="['entities:add']"）。
+│   │       ├── hasRole.js
+│   │       │   # 检查角色指令（如 v-hasRole="['admin']"）。
+│   │       └── index.js
+│   │           # 指令注册入口。
+│   ├── layout
+│   │   # 页面布局组件，定义后台管理界面结构。
+│   │   ├── index.vue
+│   │   │   # 主布局，包含导航栏、侧边栏、内容区域。
+│   │   └── components
+│   │       ├── AppMain.vue
+│   │       │   # 内容区域，渲染路由对应的页面。
+│   │       ├── Navbar.vue
+│   │       │   # 顶部导航栏，显示用户信息、退出按钮。
+│   │       ├── Sidebar
+│   │       │   ├── index.vue
+│   │       │   │   # 侧边栏，显示菜单。
+│   │       │   ├── Logo.vue
+│   │       │   │   # 侧边栏 logo 组件。
+│   │       │   └── SidebarItem.vue
+│   │       │       # 侧边栏菜单项，动态渲染路由。
+│   │       └── TagsView
+│   │           ├── index.vue
+│   │           │   # 标签页导航，显示已打开的页面。
+│   │           └── ScrollPane.vue
+│   │               # 标签页滚动容器。
+│   ├── router
+│   │   # 路由配置，定义页面路径和组件。
+│   │   └── index.js
+│   │       # 路由入口，包含产品、媒体、搜索等页面路由。
+│   ├── store
+│   │   # Vuex 状态管理，存储全局状态。
+│   │   ├── getters.js
+│   │   │   # Vuex getter，简化状态访问。
+│   │   ├── index.js
+│   │   │   # Vuex 入口，注册模块。
+│   │   └── modules
+│   │       ├── app.js
+│   │       │   # 应用状态（如侧边栏折叠状态）。
+│   │       ├── permission.js
+│   │       │   # 权限状态，存储用户角色和权限。
+│   │       ├── settings.js
+│   │       │   # 配置状态（如主题、布局）。
+│   │       ├── tagsView.js
+│   │       │   # 标签页状态，管理已打开页面。
+│   │       └── user.js
+│   │           # 用户状态，存储登录信息（如 token）。
+│   ├── utils
+│   │   # 工具函数，提供通用逻辑。
+│   │   ├── auth.js
+│   │   │   # 认证相关，管理 token 存储和获取。
+│   │   ├── request.js
+│   │   │   # Axios 封装，配置 API 请求和拦截器。
+│   │   ├── permission.js
+│   │   │   # 权限验证函数，与 directive/permission 配合。
+│   │   └── validate.js
+│   │       # 表单验证函数，如邮箱、手机号格式检查。
+│   └── views
+│       # 页面视图，定义具体页面。
+│       ├── login.vue
+│       │   # 登录页面，支持用户登录。
+│       ├── entities
+│       │   # 产品管理页面，展示 entities 表数据。
+│       │   ├── index.vue
+│       │   │   # 产品列表页面，支持分页、搜索。
+│       │   ├── add.vue
+│       │   │   # 添加产品页面。
+│       │   └── edit.vue
+│       │       # 编辑产品页面。
+│       ├── media
+│       │   # 媒体管理页面，展示 media 表数据。
+│       │   └── index.vue
+│       │       # 媒体列表页面，支持图片/视频预览和上传。
+│       ├── search
+│       │   # 搜索页面，基于 tags 和 entities 表。
+│       │   └── index.vue
+│       │       # 搜索结果页面，支持关键字搜索。
+│       └── system
+│           # 系统管理模块，管理用户、角色等。
+│           ├── user
+│           │   ├── index.vue
+│           │   │   # 用户列表页面，支持增删改查。
+│           │   └── profile
+│           │       ├── index.vue
+│           │       │   # 用户个人资料页面。
+│           │       ├── resetPwd.vue
+│           │       │   # 重置密码页面。
+│           │       └── userAvatar.vue
+│           │           # 用户头像修改页面。
+│           ├── role
+│           │   └── index.vue
+│           │       # 角色列表页面，支持权限分配。
+│           ├── dept
+│           │   └── index.vue
+│           │       # 部门列表页面，支持组织结构管理。
+│           ├── menu
+│           │   └── index.vue
+│           │       # 菜单列表页面，管理导航菜单。
+│           └── config
+│               └── index.vue
+│                   # 系统配置页面，管理主题、布局等。
