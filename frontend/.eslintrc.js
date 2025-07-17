@@ -24,11 +24,14 @@ module.exports = {
     'vue/multiline-html-element-content-newline': 'off',
     'vue/name-property-casing': ['error', 'PascalCase'],
     'vue/no-v-html': 'off',
+    'vue/html-self-closing':'off',
+    'vue/attributes-order':'off',
+    'vue/html-closing-bracket-spacing':'off',
 
     // JavaScript 基础规则（保留原有配置）
     'accessor-pairs': 2,
     'eol-last': [2, 'always'],
-    'arrow-spacing': [2, { before: true, after: true }],
+    'arrow-spacing': 'off',
     'block-spacing': [2, 'always'],
     'brace-style': [2, '1tbs', { allowSingleLine: true }],
     'camelcase': [0, { properties: 'always' }],
@@ -43,7 +46,7 @@ module.exports = {
     'handle-callback-err': [2, '^(err|error)$'],
     'indent': [2, 2, { SwitchCase: 1 }],
     'jsx-quotes': [2, 'prefer-single'],
-    'key-spacing': [2, { beforeColon: false, afterColon: true }],
+    'key-spacing': 'off',
     'keyword-spacing': [2, { before: true, after: true }],
     'new-cap': [2, { newIsCap: true, capIsNew: false }],
     'new-parens': 2,
@@ -127,11 +130,8 @@ module.exports = {
       }
     }],
     'padded-blocks': [2, 'never'],
-    'quotes': [2, 'single', {
-      avoidEscape: true,
-      allowTemplateLiterals: true
-    }],
-    'semi': [2, 'never'],
+    'quotes': 'off',
+    'semi': 'off',
     'semi-spacing': [2, {
       before: false,
       after: true
