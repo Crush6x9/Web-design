@@ -236,7 +236,7 @@ export default {
   },
   activated() {
     const time = this.$route.query.t;
-    if (time != null && time != this.uniqueId) {
+    if (time !== null && time !== this.uniqueId) {
       this.uniqueId = time;
       this.resetQuery();
     }
@@ -260,11 +260,11 @@ export default {
     /** 生成代码操作 */
     handleGenTable(row) {
       const tableNames = row.tableName || this.tableNames;
-      if (tableNames == "") {
+      if (tableNames === "") {
         this.msgError("请选择要生成的数据");
         return;
       }
-      if(row.genType === "1") {
+      if (row.genType === "1") {
         genCode(row.tableName).then(response => {
           this.msgSuccess("成功生成到自定义路径：" + row.genPath);
         });
@@ -313,7 +313,7 @@ export default {
     handleSelectionChange(selection) {
       this.ids = selection.map(item => item.tableId);
       this.tableNames = selection.map(item => item.tableName);
-      this.single = selection.length != 1;
+      this.single = selection.length !== 1;
       this.multiple = !selection.length;
     },
     /** 修改按钮操作 */

@@ -10,7 +10,7 @@ Vue.use(Router)
 
 /* Layout */
 import Layout from '@/layout'
-import ParentView from '@/components/ParentView';
+// import { component } from 'vue/types/umd'
 
 /**
  * Note: 路由配置项
@@ -124,6 +124,70 @@ export const constantRoutes = [
       }
     ]
   },
+  {
+    path: '/list',
+    component: Layout,
+    hidden: false,
+    children: [
+      {
+        path: 'list',
+        component: (resolve) => require(['@/views/list'], resolve),
+        name: 'List',
+        meta: { title: '探索列表', icon:'list' }
+      }
+    ]
+  },
+  {
+    path: '/analysis',
+    component: Layout,
+    hidden: false,
+    children: [
+      {
+        path: 'analysis',
+        component: (resolve) => require(['@/views/analysis'], resolve),
+        name: 'Analysis',
+        meta: { title: '案例分析', icon:'chart' }
+      }
+    ]
+  },
+  {
+    path: '/research',
+    component: Layout,
+    hidden: false,
+    children: [
+      {
+        path: 'research',
+        component: (resolve) => require(['@/views/research'], resolve),
+        name: 'Research',
+        meta: { title: '学科研究', icon:'example' }
+      }
+    ]
+  },
+  {
+    path: '/github',
+    component: Layout,
+    hidden: false,
+    children: [
+      {
+        path: 'github',
+        component: (resolve) => require(['@/views/github'], resolve),
+        name: 'GitHub',
+        meta: { title: '项目协作', icon:'github' }
+      }
+    ]
+  },
+  {
+    path: '/system',
+    component: Layout,
+    children: [
+      {
+        path: 'system',
+        component: (resolve) => require(['../views/system/user/profile'], resolve),
+        name: 'space',
+        meta: { title: '设置', icon: 'system', noCache: true, affix: true }
+      }
+    ]
+  }
 ]
 
 export default new Router({

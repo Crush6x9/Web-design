@@ -39,7 +39,7 @@ import Search from '@/components/HeaderSearch'
 
 export default {
   components: {
-    Search,
+    Search
   },
   data() {
     return {

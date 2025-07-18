@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <h1 class="tip">-------------title占位符-------------</h1>
+    <h1 class="tip">从互联网产品兴衰史谈数字经济的发展</h1>
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
       <h3 class="title">用户登入</h3>
       <el-form-item prop="username">

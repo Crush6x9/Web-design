@@ -11,7 +11,7 @@
 
 <style>
 .head{
-  margin-left: 8%;
-  margin-top: 5%;
+  margin-left: 6%;
+  margin-top: 10%;
 }
 </style>
