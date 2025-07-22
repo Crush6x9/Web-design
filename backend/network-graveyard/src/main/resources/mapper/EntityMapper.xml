@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neu.mapper.EntityMapper">
+    <resultMap id="EntityResultMap" type="com.neu.domain.Entity">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="description" property="description"/>
+        <result column="category_id" property="categoryId"/>
+        <result column="launch_date" property="launchDate"/>
+        <result column="discontinuation_date" property="discontinuationDate"/>
+        <result column="create_by" property="createBy"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_by" property="updateBy"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <select id="findAll" resultMap="EntityResultMap">
+        SELECT * FROM entities
+    </select>
+
+    <select id="findById" resultMap="EntityResultMap">
+        SELECT * FROM entities WHERE id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="com.neu.domain.Entity">
+        INSERT INTO entities (name, description, category_id, launch_date, discontinuation_date, create_by, create_time, update_by, update_time)
+        VALUES (#{name}, #{description}, #{categoryId}, #{launchDate}, #{discontinuationDate}, #{createBy}, #{createTime}, #{updateBy}, #{updateTime})
+    </insert>
+
+    <update id="update" parameterType="com.neu.domain.Entity">
+        UPDATE entities
+        SET name = #{name}, description = #{description}, category_id = #{categoryId},
+            launch_date = #{launchDate}, discontinuation_date = #{discontinuationDate},
+            update_by = #{updateBy}, update_time = #{updateTime}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM entities WHERE id = #{id}
+    </delete>
+
+    <select id="searchByNameOrTag" resultMap="EntityResultMap">
+        SELECT DISTINCT e.*
+        FROM entities e
+                 LEFT JOIN entity_tags et ON e.id = et.entity_id
+                 LEFT JOIN tags t ON et.tag_id = t.id
+        WHERE e.name LIKE CONCAT('%', #{keyword}, '%') OR t.name LIKE CONCAT('%', #{keyword}, '%')
+    </select>
+</mapper>
