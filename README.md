@@ -60,14 +60,14 @@ git push origin main
 ```
 ##前端开发指南 - Network Graveyard 项目 (Vue.js)
 这是使用 Vue.js 开发 Network Graveyard 前端项目的指南，后端基于 Spring Boot 提供了 RESTful API。以下步骤将帮助你设置环境、连接后端并开始开发。
-
+```bash
 ##技术栈
 框架: Vue.js 3.x
 编辑器: Visual Studio Code (VSCode)
 构建工具: Node.js, npm
 HTTP 客户端: Axios
 后端地址: http://localhost:8080/api (默认，后端端口可配置)
-
+```bash
 ##环境搭建
  #1. 安装 Node.js 和 npm
 下载并安装 Node.js (推荐 LTS 版本)。
@@ -95,12 +95,14 @@ npm install
 启动开发服务器：
 npm run dev
 浏览器打开 http://localhost:5173（Vite 默认端口）。
-##连接后端
+```bash
+## 连接后端
 #1. 安装 Axios
 在项目中安装 Axios：
 npm install axios
 #2. 配置 API 代理
 避免 CORS 问题，配置代理（Vite 示例）： 在 vite.config.js 中添加：
+```bash
 javascript：
 
 
@@ -119,6 +121,7 @@ export default defineConfig({
     }
   }
 });
+```bash
 重启开发服务器。
 #3. 示例代码
 创建服务文件 (src/services/api.js)：
@@ -134,7 +137,7 @@ const api = axios.create({
     'Content-Type': 'application/json'
   }
 });
-
+```bash
 // 添加 token (登录后设置)
 api.interceptors.request.use(config => {
   const token = localStorage.getItem('token');
@@ -145,6 +148,7 @@ api.interceptors.request.use(config => {
 });
 
 export default api;
+```bash
 示例组件 (src/views/NetworkList.vue)：
 vue：
 
@@ -191,6 +195,7 @@ export default {
 ul { list-style-type: none; padding: 0; }
 li { margin: 10px 0; }
 </style>
+```bash
 #4. 登录与认证
 处理登录 API (/api/auth/login)：
 javascript：
@@ -200,6 +205,7 @@ async function login(username, password) {
   localStorage.setItem('token', response.data.token);
   return response.data;
 }
+```bash
 保护路由（使用 Vue Router + 导航守卫）：
 javascript：
 
@@ -222,6 +228,7 @@ router.beforeEach((to, from, next) => {
 });
 
 export default router;
+```bash
 ##开发注意事项
 CORS: 后端已支持 http://localhost:3000 或 5173，如需其他端口，请联系后端开发调整。
 # 错误处理: API 错误返回 error 字段，需在前端显示用户友好的提示。
@@ -232,6 +239,7 @@ npm install vue-socket.io
 text：
 
 VITE_API_BASE_URL=/api
+```bash
 # 运行与测试
 开发：npm run dev
 构建：npm run build (生成 dist 目录)
