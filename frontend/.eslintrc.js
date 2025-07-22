@@ -38,7 +38,7 @@ module.exports = {
     'eol-last': [2, 'always'],
     'arrow-spacing': 'off',
     'block-spacing': [2, 'always'],
-    'brace-style': [2, '1tbs', { allowSingleLine: true }],
+    'brace-style': 'off',
     'camelcase': [0, { properties: 'always' }],
     'comma-dangle': [2, 'never'],
     'comma-spacing': [2, { before: false, after: true }],

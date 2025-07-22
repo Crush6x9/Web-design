@@ -26,10 +26,10 @@ service.interceptors.request.use(config => {
     for (const propName of Object.keys(config.params)) {
       const value = config.params[propName];
       var part = encodeURIComponent(propName) + "=";
-      if (value !== null && typeof(value) !== "undefined") {
+      if (value !== null && typeof (value) !== "undefined") {
         if (typeof value === 'object') {
           for (const key of Object.keys(value)) {
-            let params = propName + '[' + key + ']';
+            const params = propName + '[' + key + ']';
             var subPart = encodeURIComponent(params) + "=";
             url += subPart + encodeURIComponent(value[key]) + "&";
           }
@@ -84,7 +84,7 @@ service.interceptors.response.use(res => {
   error => {
     console.log('err' + error)
     let { message } = error;
-    if (message == "Network Error") {
+    if (message === "Network Error") {
       message = "后端接口连接异常";
     }
     else if (message.includes("timeout")) {

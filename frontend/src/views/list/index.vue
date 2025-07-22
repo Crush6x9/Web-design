@@ -40,16 +40,15 @@ export default {
         { id: 19, title: 'LifeStage 2016-2017.8', description: '2016年推出的独立社交媒体软件，该应用需绑定手机号，且仅当同一学校有20名学生注册时开放该校社区互动功能；超过21岁的用户无法查看他人资料。2017年8月，因用户活跃度不足，Facebook宣布关闭Lifestage并下架应用', image: require('@/assets/images/LifeStage.png') },
         { id: 20, title: 'Oculus 2021-2017.5', description: 'Meta公司旗下的一家美国虚拟现实科技公司，首件产品Oculus Rift是一款逼真的虚拟现实头戴式显示器，且目前已经在市面上贩售。2017年5月，Facebook宣布将关闭Oculus的VR内容制作部门“Oculus Story Studio”', image: require('@/assets/images/Oculus.png') },
         { id: 21, title: 'Novi 2020.5-2022.7', description: 'Novi是Meta为支持数字货币交易而开发的数字钱包服务，试点期间采用与美元挂钩的稳定币USDP。2021年12月，Novi通过WhatsApp在美国启动加密货币支付试点 ；但因监管压力，于2022年7月宣布终止服务', image: require('@/assets/images/Novi.png') },
-        // require('@/assets/images/.png')
         { id: 22, title: 'Crucible 2020.5-2020.10', description: '《Crucible》是由亚马逊旗下游戏工作室Relentless Studios研发的一款团队射击竞技游戏。游戏首日的在线人数超过了2.5万人，但在Steam玩家的好评率却只有40%，最终拉回测试后取消该项目', image: require('@/assets/images/Crucible.png') },
-        { id: 23, title: 'Amazon Spark 2017.7-2019.6.14', description: '亚马逊于2017年推出的新社交平台，类似于Instagram。仅限Prime会员发布内容，但所有用户都可浏览。通过此平台，用户可以分享产品评论、发起投票，并直接跳转购买', image: require('@/assets/images/Spark.png') },
-        { id: 24, title: '百度贴吧', description: '这是一个描述', image: 'https://via.placeholder.com/50' },
-        { id: 25, title: '百度贴吧', description: '这是一个描述', image: 'https://via.placeholder.com/50' },
-        { id: 26, title: '百度贴吧', description: '这是一个描述', image: 'https://via.placeholder.com/50' },
-        { id: 27, title: '百度贴吧', description: '这是一个描述', image: 'https://via.placeholder.com/50' },
-        { id: 28, title: '百度贴吧', description: '这是一个描述', image: 'https://via.placeholder.com/50' },
-        { id: 29, title: '百度贴吧', description: '这是一个描述', image: 'https://via.placeholder.com/50' },
-        { id: 30, title: '百度贴吧', description: '这是一个描述', image: 'https://via.placeholder.com/50' }
+        { id: 23, title: 'Amazon Spark 2017.7-2019.6.14', description: '亚马逊于2017年推出的新社交平台，类似于Instagram。仅限Prime会员发布内容，但所有用户都可浏览。通过此平台，用户可以分享产品评论、发起投票，并直接跳转购买；后因项目参与度极低而被官方下线', image: require('@/assets/images/Spark.png') },
+        { id: 24, title: 'Amazon Storywriter 2015-2020.4.30', description: '亚马逊推出的第二款创作工具，具备自动格式化功能，在输入过程中帮助改进剧本排版。支持导入和导出 PDF 文件、FDX 文件及 Fountain 格式，作品也将自动同步保存至云端；最终Amazon在2020年同时关闭了Storywriter与Storybuilder', image: require('@/assets/images/Storywriter.png') },
+        { id: 25, title: 'Google Glass 2012.7-2023.3.15', description: '“尽管你生前并不是一副合格的眼镜，甚至不一定有传统意义上的镜片，但你在推动AR眼镜发展的进程中依旧做了不可磨灭贡献。我们不会想念你，但现在你终于可以和另外两百个被Google关闭的项目一起安度余生了”', image: require('@/assets/images/GoogleGlass.png') },
+        { id: 26, title: 'Zune 2006.9.17-2013.11.22', description: '一款与Windows Phone手机搭配的桌面端管理软件，用户可以通过Zune为Windows Phone手机安装最新的系统更新，下载应用和游戏，以及管理并同步音乐、视频和图片等内容；北京时间2011年10月4日微软宣布，停止生产便携式播放器Zune', image: require('@/assets/images/Zune.png') },
+        { id: 27, title: 'iPod 2001.10-2022.5.10', description: 'iPod 是由苹果公司（Apple Inc.）设计和销售的系列便携式多功能数字多媒体播放器。2022 年 5 月 10 日，Apple 宣布 iPod 产品线正式停更；12 日，苹果中国官网下架了 iPod touch。所有 iPod 产品现均已停产', image: require('@/assets/images/iPod.png') },
+        { id: 28, title: 'YunOS手机 2011.7.28-2017.10', description: 'YunOS是阿里巴巴集团旗下的一款智能设备操作系统产品，可搭载于智能手机、智能机顶盒、互联网电视等多种智能终端设备；2017年10月停用手机操作系统的业务并更名为AliOS', image: require('@/assets/images/YunOS.png') },
+        { id: 29, title: '企鹅极光盒子 2017.7.2-2018.1.18', description: '企鹅极光盒子是由腾讯视频联合创维数字出品的高端网络高清机顶盒。腾讯视频将自身擅长的内容运营、用户资源、支付体系等优势资源融入硬件中，共同为用户提供优质的产品体验；后因产品线收缩逐渐停产', image: require('@/assets/images/TencentBox.png') },
+        { id: 30, title: 'Raven H 2017.11.6-2018', description: 'Raven H是由百度2017年收购的智能硬件团队渡鸦科技设计制造的智能音箱。Raven H配备了19×19 LED点阵屏，支持WiFi、蓝牙4.0、ZigBee等多种协议，配备了USB Type-C接口；因市场接受度不高仅销售半年', image: require('@/assets/images/Raven.png') }
       ]
     };
   }
@@ -62,7 +61,8 @@ export default {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  margin-top: 2%;
+  margin-top: 1%;
+  margin-bottom: 5%;
 }
 
 .grid {
