@@ -16,7 +16,7 @@ const permission = {
     },
     SET_SIDEBAR_ROUTERS: (state, routers) => {
       state.sidebarRouters = constantRoutes.concat(routers)
-    },
+    }
   },
   actions: {
     // 生成路由

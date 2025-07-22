@@ -11,7 +11,7 @@ const name = defaultSettings.title || '测试管理系统' // 标题
 const port = process.env.port || process.env.npm_config_port || 80 // 端口
 
 // vue.config.js 配置说明
-//官方vue.config.js 参考文档 https://cli.vuejs.org/zh/config/#css-loaderoptions
+// 官方vue.config.js 参考文档 https://cli.vuejs.org/zh/config/#css-loaderoptions
 // 这里只列一部分，具体配置参考文档
 module.exports = {
   // 部署生产环境和开发环境下的URL。
@@ -35,7 +35,7 @@ module.exports = {
       // detail: https://cli.vuejs.org/config/#devserver-proxy
       [process.env.VUE_APP_BASE_API]: {
          target: `http://localhost:9090`,
-        //target: `http://cmapi.abc.com`,
+        // target: `http://cmapi.abc.com`,
         changeOrigin: true,
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API]: ''
@@ -110,8 +110,8 @@ module.exports = {
             })
           config.optimization.runtimeChunk('single'),
           {
-             from: path.resolve(__dirname, './public/robots.txt'), //防爬虫文件
-             to: './', //到根目录下
+             from: path.resolve(__dirname, './public/robots.txt'), // 防爬虫文件
+             to: './'// 到根目录下
           }
         }
       )
