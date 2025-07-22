@@ -42,7 +42,7 @@ export default {
         { id: 21, title: 'Novi 2020.5-2022.7', description: 'Novi是Meta为支持数字货币交易而开发的数字钱包服务，试点期间采用与美元挂钩的稳定币USDP。2021年12月，Novi通过WhatsApp在美国启动加密货币支付试点 ；但因监管压力，于2022年7月宣布终止服务', image: require('@/assets/images/Novi.png') },
         // require('@/assets/images/.png')
         { id: 22, title: 'Crucible 2020.5-2020.10', description: '《Crucible》是由亚马逊旗下游戏工作室Relentless Studios研发的一款团队射击竞技游戏。游戏首日的在线人数超过了2.5万人，但在Steam玩家的好评率却只有40%，最终拉回测试后取消该项目', image: require('@/assets/images/Crucible.png') },
-        { id: 23, title: '百度贴吧', description: '这是一个描述', image: 'https://via.placeholder.com/50' },
+        { id: 23, title: 'Amazon Spark 2017.7-2019.6.14', description: '亚马逊于2017年推出的新社交平台，类似于Instagram。仅限Prime会员发布内容，但所有用户都可浏览。通过此平台，用户可以分享产品评论、发起投票，并直接跳转购买', image: require('@/assets/images/Spark.png') },
         { id: 24, title: '百度贴吧', description: '这是一个描述', image: 'https://via.placeholder.com/50' },
         { id: 25, title: '百度贴吧', description: '这是一个描述', image: 'https://via.placeholder.com/50' },
         { id: 26, title: '百度贴吧', description: '这是一个描述', image: 'https://via.placeholder.com/50' },
