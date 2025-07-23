@@ -94,8 +94,8 @@ export default {
 <style lang="scss" scoped>
 .navbar {
   height: 50px;
-  overflow: hidden;
-  position: relative;
+  display: flex;
+  justify-content: space-between;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0,21,41,.08);
 
@@ -107,10 +107,10 @@ export default {
   }
 
   .left-menu {
-    float: left;
-    margin-top: 0px;
     display: flex;
     align-items: center;
+    flex: 1;
+    margin-top: 5px;
   }
 
   .right-menu {

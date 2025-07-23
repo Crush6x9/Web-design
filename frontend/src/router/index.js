@@ -164,6 +164,20 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/techno',
+    component: Layout,
+    hidden: false,
+    children: [
+      {
+        path: 'techno',
+        component: (resolve) => require(['@/views/techno'], resolve),
+        name: 'Techno',
+        meta: { title: '技术支持', icon:'chart' }
+      }
+    ]
+  },
+
+  {
     path: '/github',
     component: Layout,
     hidden: false,

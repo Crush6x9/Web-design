@@ -1,6 +1,7 @@
 <template>
   <div class="login">
-    <h1 class="tip">从互联网产品兴衰史谈数字经济的发展</h1>
+    <h1 class="tip">从互联网产品兴衰史谈数字经济的发展<br>Talking about the development of the digital economy from the history of the rise and fall of Internet products
+    </h1>
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form">
       <h3 class="title">用户登入</h3>
       <el-form-item prop="username">
@@ -148,6 +149,7 @@ export default {
   text-align: center;
   font-weight: 500;
   -webkit-text-stroke: 1px #333; 
+  max-width: 70%;
 }
 
 .login {
@@ -167,7 +169,7 @@ export default {
 }
 
 .login-form {
-  margin-top: 3%;
+  margin-top: 1%;
   margin-left: 0;
   border-radius: 6px;
   background: #fdf6fb;
